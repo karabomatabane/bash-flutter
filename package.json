@@ -1,0 +1,76 @@
+{
+  "name": "bash-flutter",
+  "displayName": "Bash Flutter",
+  "description": "Quick code-gen tools that expedite writing bash flutter code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.new-bloc-page",
+        "title": "Bash Flutter: New Page"
+      },
+      {
+        "command": "extension.new-page",
+        "title": "Bash Flutter: New Page (no bloc)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.new-bloc-page",
+          "group": "blocPageGroup@1",
+          "when": "explorerResourceIsFolder && bloc.showContextMenu"
+        },
+        {
+          "command": "extension.new-page",
+          "group": "blocPageGroup@1",
+          "when": "explorerResourceIsFolder && bloc.showContextMenu"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/change-case": "^0.0.30",
+    "@types/js-yaml": "^4.0.9",
+    "@types/lodash": "^4.17.20",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.105.0",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.25.10",
+    "eslint": "^9.36.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "change-case": "^5.4.4",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21"
+  }
+}
