@@ -8,6 +8,7 @@ This extension provides the following Flutter code generation features:
 
 - **Generate New Page**: Create a new Flutter page with boilerplate code
 - **Generate New BLoC Page**: Create a new Flutter page with BLoC pattern implementation
+- **Generate New Golden Test**: Create a simple golden test scaffold for a single component case
 - **Context Menu Integration**: Right-click on folders in the Explorer to generate code directly in the selected directory
 - **Command Palette Support**: Access all commands through Ctrl+Shift+P (Cmd+Shift+P on macOS)
 

@@ -20,6 +20,14 @@
       {
         "command": "extension.new-page",
         "title": "Bash Flutter: New Page (no bloc)"
+      },
+      {
+        "command": "extension.new-golden-test",
+        "title": "Bash Flutter: New Golden Test"
+      },
+      {
+        "command": "extension.generate-goldens",
+        "title": "Bash Flutter: Generate Goldens"
       }
     ],
     "menus": {
@@ -33,6 +41,16 @@
           "command": "extension.new-page",
           "group": "blocPageGroup@1",
           "when": "explorerResourceIsFolder && bloc.showContextMenu"
+        },
+        {
+          "command": "extension.new-golden-test",
+          "group": "blocPageGroup@2",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.generate-goldens",
+          "group": "blocPageGroup@3",
+          "when": "resourceFilename =~ /golden.*test\\.dart$|_golden_test\\.dart$/"
         }
       ]
     }
