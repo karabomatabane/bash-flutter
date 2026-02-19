@@ -16,6 +16,15 @@
 				"${workspaceFolder}/dist/**/*.js"
 			],
 			"preLaunchTask": "${defaultBuildTask}"
+		},
+		{
+			"name": "Generate Golden",
+			"request": "launch",
+			"type": "dart",
+			"codeLens": {
+				"for": ["run-test", "run-test-file"]
+			},
+			"args": ["--update-goldens"]
 		}
 	]
 }

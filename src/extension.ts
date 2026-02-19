@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import { commands, ExtensionContext, window, workspace } from "vscode";
-import { generateGoldens, newGoldenTest, newPage } from "./commands";
+import { generateGoldens, newGoldenTest, newGoldenTestFromWidget, newPage } from "./commands";
 import { setShowContextMenu } from "./utils/set-show-context-menu";
 import { newBlocPage } from "./commands/new-bloc-page.command";
 
@@ -14,6 +14,7 @@ export function activate(context: ExtensionContext) {
     commands.registerCommand('extension.new-bloc-page', newBlocPage),
     commands.registerCommand("extension.new-page", newPage),
     commands.registerCommand("extension.new-golden-test", newGoldenTest),
+    commands.registerCommand("extension.new-golden-test-from-widget", newGoldenTestFromWidget),
     commands.registerCommand("extension.generate-goldens", generateGoldens)
     // commands.registerCommand('extension.new-bloc', newBloc)
   );

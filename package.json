@@ -28,6 +28,10 @@
       {
         "command": "extension.generate-goldens",
         "title": "Bash Flutter: Generate Goldens"
+      },
+      {
+        "command": "extension.new-golden-test-from-widget",
+        "title": "Bash Flutter: Create Golden Test for Widget"
       }
     ],
     "menus": {
@@ -51,6 +55,13 @@
           "command": "extension.generate-goldens",
           "group": "blocPageGroup@3",
           "when": "resourceFilename =~ /golden.*test\\.dart$|_golden_test\\.dart$/"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "extension.new-golden-test-from-widget",
+          "group": "goldenTest@1",
+          "when": "editorLangId == dart"
         }
       ]
     }
